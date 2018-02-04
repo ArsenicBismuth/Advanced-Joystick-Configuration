@@ -62,11 +62,9 @@ class AxisMergerEz extends _UCR.Classes.Plugin {
 		if (this.GuiControls.Invert2.Get())
 			value2 := UCR.Libraries.StickOps.Invert(value2)
 		
-		; Apply multiplier
-		if (this.GuiControls.Multi1.Get())
-			value1 := value1 * this.GuiControls.Multi1.Get()
-		if (this.GuiControls.Multi2.Get())
-			value2 := value2 * this.GuiControls.Multi2.Get()
+		; Apply multiplier, no need to check since 0 setting is possible
+		value1 := value1 * this.GuiControls.Multi1.Get()
+		value2 := value2 * this.GuiControls.Multi2.Get()
 		
 		; Do the merge
 		if (this.GuiControls.MergeMode.Get() = 1){
